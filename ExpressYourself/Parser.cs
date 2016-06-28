@@ -32,13 +32,31 @@ namespace ExpressYourself
         public static string GetType(string str)
         {
             // TODO
-            return "";
+            var typeExpression = new Regex(@"Type\: ([a-zA-z]+),");
+            var match = typeExpression.Match(str);
+            if (!match.Success)
+            {
+                return "Type Not Found";
+            }
+            else
+            {
+                return match.Groups[1].Value;
+            }
         }
 
         public static string GetLength(string str)
         {
             // TODO
-            return "";
+            var lengthExpression = new Regex(@"Length\: ([0-9a-zA-Z a-z]+)");
+            var match = lengthExpression.Match(str);
+            if (!match.Success)
+            {
+                return "Length Not Found";
+            }
+            else
+            {
+                return match.Groups[1].Value;
+            }
         }
 
         public static bool IsValidLine(string str)
