@@ -62,7 +62,16 @@ namespace ExpressYourself
         public static bool IsValidLine(string str)
         {
             // TODO
-            return false;
+            var validLineExpression = new Regex(@"Type: ([a-zA-z]+),Title\: (.*),+Length\: ([0-9a-zA-Z a-z]+)");
+            var match = validLineExpression.Match(str);
+            if (match.Success)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }
