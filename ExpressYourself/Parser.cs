@@ -72,6 +72,7 @@ namespace ExpressYourself
             {
                 return false;
             }
+            // could also write return match.Success;
         }
     }
 }
